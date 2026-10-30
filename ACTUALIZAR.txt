@@ -1,0 +1,12 @@
+M17GEST 1.5
+
+1. Descomprime este ZIP.
+2. En tu repositorio GitHub sube index.html, app.js y styles.css en la raíz, reemplazando los anteriores.
+3. Confirma Commit changes y espera la publicación.
+4. Recarga con Ctrl+F5 en ordenador; en móvil cierra y vuelve a abrir la página.
+
+No cambies config.js ni ejecutes SQL. Los datos existentes se conservan. Los once logos originales están incluidos dentro de app.js: no necesitas subir ninguna carpeta de imágenes.
+
+Cambios: título Duración; opciones 1/3/6 meses y 1 año; fechas mostradas sin hora; etiquetas Usuario y Contraseña; Pagado, Regalo y Paga más tarde solo seleccionan el estado. El guardado requiere pulsar Guardar cliente (o Guardar operación en renovaciones). Paga más tarde oculta importe y método y lo deja pendiente de definir al registrar el cobro. La hora se conserva internamente para respetar los vencimientos ya guardados, pero no se muestra.
+
+Comprobados JavaScript, once logos asignados, etiquetas, fechas sin hora y selección de pagos sin enviar el formulario. Comprueba el aspecto en tu móvil después de publicar; no se han realizado operaciones en tu base de datos.
