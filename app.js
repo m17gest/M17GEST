@@ -49,7 +49,7 @@ function validateTemplate(type,text){if(!text.trim())throw Error('La plantilla n
 function quickMessage(d,type){
  let template=messageTemplate(type);validateTemplate(type,template);
  const values={nombre:d.name,id:d.code,usuario:d.username,contraseña:d.password,caducidad:fmt(d.expiry),aviso_caducidad:state(d)==='expired'?'⌛ Tu cuenta ha caducado':'⏰ ¡Tu cuenta está próxima a caducar!'};
- if(type==='renewal'){const event=[...(d.events||[])].reverse().find(e=>e.type==='renovacion');if(!event)throw Error('Este cliente todavía no tiene una renovación registrada.');values.fecha_inicio=fmt(event.periodStart||(event.from&&event.from>event.date?event.from:event.date)||event.from);values.fecha_fin=fmt(event.to)}
+ if(type==='renewal'){const event=[...(d.events||[])].reverse().find(e=>e.type==='renovacion');if(event){values.fecha_inicio=fmt(event.periodStart||(event.from&&event.from>event.date?event.from:event.date)||event.from);values.fecha_fin=fmt(event.to)}else{values.fecha_inicio=fmt(d.start);values.fecha_fin=fmt(d.expiry);template=template.replace('📆 Periodo renovado: del {fecha_inicio} al {fecha_fin}.','📅 Tu cuenta está activa hasta el {caducidad}.')}}
  if(type==='access'&&!template.includes('🔞 Código de adultos: 0000'))template+='\n\n🔞 Código de adultos: 0000';
  return template.replace(/\{([^{}]+)\}/g,(_,key)=>String(values[key]??''));
 }
