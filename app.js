@@ -75,9 +75,9 @@ function quickMessage(d,type){
 async function copyQuickMessage(row,type,onCopied){let text;try{text=quickMessage(row.data,type)}catch(e){notify(e.message);return}try{await navigator.clipboard.writeText(text);if(onCopied)onCopied();notify('¡Mensaje copiado! Pégalo en WhatsApp 😊')}catch{modal(MESSAGE_TITLES[type],'<p>Tu navegador no ha permitido copiar directamente. Mantén pulsado el texto para copiarlo.</p><textarea id="quickMessageText" class="quick-message-text" aria-label="Mensaje para copiar" readonly></textarea><div class="actions"><button class="ghost" data-cancel>Volver a la ficha</button></div>');$('#quickMessageText').value=text;$('#quickMessageText').focus();$('#quickMessageText').select()}}
 function showNewClientMessage(row){
  current=row;
- modal('🎉 Renovación completada',`<p>¡Cliente guardado! Toca el botón para copiar su mensaje y cerrar esta ventana.</p><div id="newClientMessagePreview" class="new-client-message-preview"></div><div class="actions"><button type="button" id="copyNewClientMessage">📋 Copiar y cerrar</button><button type="button" class="ghost" id="skipNewClientMessage">Cerrar sin copiar</button></div>`);
- $('#newClientMessagePreview').textContent=quickMessage(row.data,'renewal');
- $('#copyNewClientMessage').onclick=()=>copyQuickMessage(row,'renewal',()=>$('#modal').close());
+ modal('🔑 Datos de acceso',`<p>¡Cliente guardado! Toca el botón para copiar su mensaje y cerrar esta ventana.</p><div id="newClientMessagePreview" class="new-client-message-preview"></div><div class="actions"><button type="button" id="copyNewClientMessage">📋 Copiar y cerrar</button><button type="button" class="ghost" id="skipNewClientMessage">Cerrar sin copiar</button></div>`);
+ $('#newClientMessagePreview').textContent=quickMessage(row.data,'access');
+ $('#copyNewClientMessage').onclick=()=>copyQuickMessage(row,'access',()=>$('#modal').close());
  $('#skipNewClientMessage').onclick=()=>$('#modal').close();
 }
 async function editMessageTemplates(row){
