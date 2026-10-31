@@ -22,3 +22,5 @@
 .workspace-toolbar{justify-content:flex-end;margin-bottom:18px}.workspace-toolbar:has(#logout[hidden]){display:none}.stat.payment-alert{background:#fff3e2;border-color:#f2b45b;box-shadow:inset 4px 0 0 #e48a17}.stat.payment-alert>span{color:#9a4c0a;font-weight:700}.stat.payment-alert strong{color:#ac420c}@media(max-width:1100px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.stat.payment-alert{grid-column:1/-1}.workspace-toolbar{margin-bottom:14px}}
 
 .stat.active-summary{background:#edf9f1;border-color:#a5d9b5;box-shadow:inset 4px 0 0 #2da562}.stat.active-summary>span{color:#217046;font-weight:700}.stat.active-summary strong{color:#17683c}.stat.active-summary small{color:#42775a}
+
+.stat.expiry-alert{background:#fff0f1;border-color:#efa0a8;box-shadow:inset 4px 0 0 #dc3545}.stat.expiry-alert>span{color:#a52435;font-weight:700}.stat.expiry-alert strong{color:#b42335}.stat.expiry-alert small{color:#9d4c58}
